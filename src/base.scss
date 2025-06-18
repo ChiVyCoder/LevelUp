@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --subnav-item-height: 30px;
+    --primary-color: #03A9F4;
+  }
+
+  @font-face {
+    font-family: 'Lora-Regular';
+    src: url('../src/assets/fonts/Lora-Regular.ttf')
+  }
+
+  @font-face {
+    font-family: 'Lora-bold';
+    src: url('../src/assets/fonts/Lora-Bold.ttf')
+  }
+  font-face {
+    font-family: 'Lora-medium';
+    src: url('../src/assets/fonts/Lora-Medium.ttf')
+  }
+  html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    font-family: 'Lora-Regular', sans-serif;
+  }
+  body {
+    background-color: #ffffff;
+    color: #fffafa;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  main {
+    min-height: 600px;
+    margin: 90px 0 0 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+  }
+  h1 {
+    font-family: 'Lora-bold', sans-serif;
+  }
+
+  h2, h3, h4, h5  {
+    font-family: 'Lora-medium';
+  }
+
+  .ta-left {
+    text-align: left;
+  }
+
+  .ta-right {
+    text-align: right;
+  }
+
+  .ta-center {
+    text-align: center;
+  }
+
+  .ta-justify {
+    text-align: justify;
+  }
+
+  .fs-16 {
+    font-size: 16px;
+  }
+
+  .format-img {
+    border-radius: 6px;
+    box-shadow: 4px 2px #dfdfdf;
+  }
+
+  .none {
+    display: none;
+  }

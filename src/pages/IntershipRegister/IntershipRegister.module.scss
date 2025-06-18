@@ -1,0 +1,98 @@
+.loginContainer {
+  position: relative;
+  max-width: 500px;
+  margin: 120px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-logo {
+  width: 50px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+  .loginContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    bottom: 0;
+    width: 10px; 
+    background-image: linear-gradient(to bottom,#5DE0E6, #004AAD, #004AAD);  /* Gradient */
+  }
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup.invalid  .formControl {
+  border-color: red;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.formControl {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.formControl:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-message {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: red;
+}
+
+.genderGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.formControlRadio {
+  margin-right: 5px;
+}
+
+
+.submitButton {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
