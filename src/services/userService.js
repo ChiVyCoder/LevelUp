@@ -1,6 +1,6 @@
 // src/services/userService.js
 
-const API_BASE_URL = 'https://localhost:7208/api';
+const API_BASE_URL = 'https://levelup-api-qg0w.onrender.com/api';
 
 
 export const getUserProfile = async (userId) => {

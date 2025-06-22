@@ -1,5 +1,5 @@
 
-const API_BASE_URL = 'https://levelup-api-qg0w.onrender.com/'; 
+const API_BASE_URL = 'https://levelup-api-qg0w.onrender.com/api'; 
 
 
 export const getAllJobs = async () => {
