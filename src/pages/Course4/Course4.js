@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'; // Import useParams
+import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Course4.module.scss';
 import PaymentModal from '../../components/PaymentModal/PaymentModal';
@@ -10,8 +10,8 @@ import images from '../../assets/images.js';
 const cx = classNames.bind(styles);
 
 function Course4() {
-  const { userId: urlUserId } = useParams(); // Lấy userId từ URL
-  const { currentUser } = useContext(AuthContext); // Lấy currentUser từ AuthContext
+  const { userId: urlUserId } = useParams(); 
+  const { currentUser } = useContext(AuthContext); 
 
   const [activeTab, setActiveTab] = useState(0);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -21,8 +21,8 @@ function Course4() {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState('');
 
-  const courseId = 4; // Hardcode courseId cho Course4
-  const currentUserId = currentUser ? currentUser.id : urlUserId || 'guest_user'; // Ưu tiên currentUser.id, sau đó đến userId từ URL, cuối cùng là guest_user
+  const courseId = 4; 
+  const currentUserId = currentUser ? currentUser.id : urlUserId || 'guest_user';
 
   useEffect(() => {
     // Kiểm tra trạng thái thanh toán từ localStorage
@@ -55,7 +55,6 @@ function Course4() {
     setMessage('');
 
     try {
-      // Sử dụng service finishCourse đã có sẵn
       const response = await finishCourse(currentUserId, courseId);
       if (response.success) {
         setIsCourseCompleted(true);

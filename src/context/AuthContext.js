@@ -6,7 +6,6 @@ export const AuthProvider = ({ children }) => {
     const getStoredUser = () => {
         try {
             const userDataString = localStorage.getItem('currentUser');
-            // Nếu có dữ liệu và không phải là chuỗi "null" hay "undefined", thì parse
             if (userDataString && userDataString !== "null" && userDataString !== "undefined") {
                 return JSON.parse(userDataString);
             }

@@ -16,7 +16,7 @@ export const getUserProfile = async (userId) => {
         return data;
     } catch (error) {
         console.error("Lỗi trong getUserProfile:", error);
-        throw error; // Ném lỗi để component gọi có thể xử lý
+        throw error;
     }
 };
 
@@ -25,10 +25,9 @@ export const getUserCourses = async (userId) => {
     try {
         const response = await fetch(`${API_BASE_URL}/User/${userId}/courses`);
 
-        if (!response.ok) {
-            // Xử lý trường hợp 404 Not Found là không có dữ liệu, không phải lỗi nghiêm trọng
+        if (!response.ok) {            
             if (response.status === 404) {
-                return []; // Trả về mảng rỗng nếu không tìm thấy
+                return [];
             }
             const errorData = await response.json();
             throw new Error(errorData.message || `Lỗi khi tải khóa học của người dùng ${userId}.`);

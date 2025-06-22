@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 function InternshipRegister() {
   const [errorMessage, setErrorMessage] = useState('');
-  const { userId, jobId } = useParams(); // Lấy userId và jobId từ URL
+  const { userId, jobId } = useParams(); 
   const navigate = useNavigate();
 
   useEffect(() => {

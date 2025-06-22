@@ -4,13 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import Validator from '../../utils/validateUtil.js';
 import images from '../../assets/images.js';
-import { AuthContext } from '../../context/AuthContext'; // Import AuthContext
+import { AuthContext } from '../../context/AuthContext'; 
 
 const cx = classNames.bind(styles);
 
 function Login() {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // Lấy hàm login từ AuthContext
+  const { login } = useContext(AuthContext); 
 
   // State để quản lý giá trị input và thông báo lỗi
   const [email, setEmail] = useState('');
@@ -31,7 +31,7 @@ function Login() {
           Validator.isRequired("#password", "Vui lòng nhập mật khẩu"),
         ],
         onSubmit: async function (formValues) {
-          setErrorMessage(''); // Reset lỗi trước khi submit
+          setErrorMessage(''); 
 
           try {
             const response = await fetch('https://localhost:7208/api/auth/login', {
@@ -45,16 +45,13 @@ function Login() {
               }),
             });
 
-            // Luôn cố gắng đọc phản hồi dưới dạng JSON trước
             const responseData = await response.json(); 
 
             if (response.ok) {
-              // Server trả về chắc chắn có trường 'user' khi thành công
               const userData = responseData.user;
-              login(userData); // Gọi hàm login để lưu thông tin user
-              navigate(`/profile/${userData.id}`); // Chuyển hướng tới trang hồ sơ cụ thể
+              login(userData); 
+              navigate(`/profile/${userData.id}`); 
             } else {
-              // Xử lý lỗi từ server (ví dụ: email/mật khẩu không đúng)
               if (responseData && responseData.message) {
                 setErrorMessage(responseData.message);
               } else if (responseData && responseData.errors) {
@@ -74,7 +71,7 @@ function Login() {
     }
   }, []); 
 
-  // Cập nhật state khi input thay đổi (controlled components)
+  // Cập nhật state khi input thay đổi 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === 'email') {
@@ -90,7 +87,7 @@ function Login() {
       <h1>Đăng Nhập</h1>
       {errorMessage && <p className={cx('error-message')}>{errorMessage}</p>}
       <form id="form" className={styles.loginForm} onSubmit={(e) => {
-          e.preventDefault(); // Ngăn chặn submit mặc định, Validator sẽ xử lý
+          e.preventDefault(); 
       }}>
         <div className={cx('formGroup')}>
           <label htmlFor="email">Email:</label>

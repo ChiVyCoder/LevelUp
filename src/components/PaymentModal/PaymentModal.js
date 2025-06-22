@@ -1,5 +1,5 @@
 // components/PaymentModal.js
-import React, { useState } from 'react'; // Bỏ useEffect vì không cần fetch ban đầu
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './PaymentModal.module.scss';
 
@@ -13,7 +13,6 @@ function PaymentModal({ course, userId, onClose, onPaymentSuccess }) {
 
     const amount = course.price || 299000; 
 
-    // Dữ liệu giả lập cho QR và thông tin chuyển khoản 
     const qrCodeData = {
         bank: 'ABCBANK',
         accountNumber: '9876543210',

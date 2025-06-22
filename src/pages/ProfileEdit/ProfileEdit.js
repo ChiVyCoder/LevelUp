@@ -3,15 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import styles from './ProfileEdit.module.scss'; // Tạo file CSS riêng cho ProfileEdit
-import { getUserProfile } from '../../services/userService'; // Dùng lại service để lấy dữ liệu gốc
-
+import styles from './ProfileEdit.module.scss'; 
+import { getUserProfile } from '../../services/userService'; 
 
 const cx = classNames.bind(styles);
 
 function ProfileEdit() {
     const { id } = useParams();
-    const userId = id; // ID của người dùng cần chỉnh sửa
+    const userId = id; 
     const navigate = useNavigate();
 
     const [loading, setLoading] = useState(true);
@@ -77,7 +76,7 @@ function ProfileEdit() {
     };
 
     const handleCancelEdit = () => {
-        navigate(`/profile/${userId}`); // Quay về trang profile mà không lưu
+        navigate(`/profile/${userId}`); 
     };
 
     if (loading) {

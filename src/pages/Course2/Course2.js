@@ -9,8 +9,8 @@ import images from '../../assets/images.js';
 const cx = classNames.bind(styles);
 
 function Course2() {
-  const { userId: urlUserId } = useParams(); // Lấy userId từ URL
-  const { currentUser } = React.useContext(AuthContext); // Lấy currentUser từ AuthContext
+  const { userId: urlUserId } = useParams();
+  const { currentUser } = React.useContext(AuthContext); 
 
   const [activeTab, setActiveTab] = useState(0);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -20,8 +20,8 @@ function Course2() {
   const [isCourseCompleted, setIsCourseCompleted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const courseId = 2; // Hardcode courseId cho Course2
-  const currentUserId = currentUser ? currentUser.id : urlUserId || 'guest_user'; // Ưu tiên currentUser.id, sau đó đến userId từ URL, cuối cùng là guest_user
+  const courseId = 2; 
+  const currentUserId = currentUser ? currentUser.id : urlUserId || 'guest_user';
 
   useEffect(() => {
     // Kiểm tra trạng thái thanh toán từ localStorage
@@ -85,7 +85,7 @@ function Course2() {
         const data = await response.json();
 
         if (response.ok && data && Array.isArray(data)) {
-          const completed = data.some(uc => uc.courseId === courseId); // So sánh trực tiếp với courseId số
+          const completed = data.some(uc => uc.courseId === courseId); 
           setIsCourseCompleted(completed);
         }
       } catch (err) {

@@ -9,8 +9,8 @@ import images from '../../assets/images.js';
 const cx = classNames.bind(styles);
 
 function Course3() {
-  const { userId: urlUserId } = useParams(); // Lấy userId từ URL
-  const { currentUser } = React.useContext(AuthContext); // Lấy currentUser từ AuthContext
+  const { userId: urlUserId } = useParams(); 
+  const { currentUser } = React.useContext(AuthContext); 
 
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isCoursePaid, setIsCoursePaid] = useState(false);
@@ -20,8 +20,8 @@ function Course3() {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState('');
 
-  const courseId = 3; // Hardcode courseId cho Course3
-  const currentUserId = currentUser ? currentUser.id : urlUserId || 'guest_user'; // Ưu tiên currentUser.id, sau đó đến userId từ URL, cuối cùng là guest_user
+  const courseId = 3; 
+  const currentUserId = currentUser ? currentUser.id : urlUserId || 'guest_user';
 
   useEffect(() => {
     const paidStatus = localStorage.getItem(`course_${courseId}_paid_for_user_${currentUserId}`);
@@ -128,7 +128,6 @@ function Course3() {
                 </button>
               </div>
 
-              {/* Hiển thị nội dung tương ứng với activeTab */}
               <div className={cx('content', { active: activeTab === 0 })}>
                 <p>
                   <strong>HTML (HyperText Markup Language)</strong> là nền tảng của mọi trang web, giúp bạn xây dựng{' '}

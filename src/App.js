@@ -5,7 +5,7 @@ import Header from './components/Header/Header.js';
 import './base.scss'; 
 import Footer from './components/Footer/Footer.js';
 
-// Import các trang của bạn
+// Import các trang
 import Home from './pages/Home/Home.js';
 import Login from './pages/Login/Login.js';
 import Register from './pages/Register/Register.js';
@@ -62,7 +62,6 @@ function App() {
   );
 }
 
-//  một component wrapper nhỏ để lấy Context và truyền props
 function HeaderWrapper() {
   const { isAuthenticated, logout } = useContext(AuthContext); 
   const navigate = useNavigate(); 

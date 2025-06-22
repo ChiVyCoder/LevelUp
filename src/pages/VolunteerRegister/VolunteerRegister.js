@@ -1,4 +1,3 @@
-// Thay đổi trong file React của bạn (Ví dụ: VolunteerRegister.js)
 import React, { useEffect } from 'react';
 import styles from './VolunteerRegister.module.scss';
 import classNames from 'classnames/bind';
@@ -33,14 +32,12 @@ function VolunteerRegister() {
   }, []);
 
   const sendVolunteerApplication = async (formData) => {
-    // Kiểm tra xem đã lấy được userId và volunteerId từ URL chưa
     if (!userId || !volunteerId) {
       alert("Thiếu ID người dùng hoặc ID hoạt động tình nguyện trong URL.");
       return;
     }
 
     const payload = {
-      // payload chỉ chứa thông tin form, userId và volunteerId sẽ được gửi qua URL
       fullname: formData.fullname,
       gender: formData.gender,
       phone: formData.phone,
@@ -50,7 +47,6 @@ function VolunteerRegister() {
     };
 
     try {
-      // <<-- CẬP NHẬT URL API để bao gồm cả userId và volunteerId
       const response = await fetch(`https://localhost:7208/api/volunteer-applications/${userId}/${volunteerId}`, {
         method: 'POST',
         headers: {
@@ -64,7 +60,6 @@ function VolunteerRegister() {
       if (response.ok) {
         console.log('Đăng ký tình nguyện thành công:', responseData);
         alert('Đăng ký tình nguyện thành công!');
-        // ... (có thể chuyển hướng hoặc reset form)
       } else {
         console.error('Đăng ký tình nguyện thất bại:', responseData);
         alert(`Đăng ký thất bại: ${responseData.message || JSON.stringify(responseData)}`);
@@ -79,10 +74,8 @@ function VolunteerRegister() {
     <div className={styles.loginContainer}>
       <img className={cx('form-logo')} src={images.logoLU} alt='Logo'/>
       <h1>Đăng ký tham gia tình nguyện</h1>
-      {/* Hiển thị ID để kiểm tra trong demo */}
       {userId && volunteerId && <p>Bạn đang đăng ký cho hoạt động **{volunteerId}** dưới tên người dùng **{userId}**</p>}
       <form id="form" className={styles.loginForm}>
-        {/* ... các trường input form ... */}
         <div className={cx('formGroup')}>
           <label htmlFor="fullname">Họ và tên:</label>
           <input type="text" id="fullname" name="fullname" className={cx('formControl')} />

@@ -187,7 +187,7 @@ Validator.isRequiredRadio = function (selector, message) {
       });
       return isChecked ? undefined : message || 'Vui lòng chọn 1 mục';
     },
-    message: message, // Thêm message vào rule để sử dụng trong hàm validate
+    message: message, 
   };
 };
 

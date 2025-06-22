@@ -2,7 +2,7 @@
 
 export const getAllVolunteers = async () => {
     try {
-        const response = await fetch('https://localhost:7208/api/volunteer');
+        const response = await fetch('https://levelup-api-qg0w.onrender.com/volunteer');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

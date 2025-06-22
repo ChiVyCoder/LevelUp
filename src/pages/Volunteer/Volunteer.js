@@ -5,8 +5,8 @@ import images from '../../assets/images.js';
 import { getAllVolunteers } from '../../services/volunteerService.js';
 import BannerCarousel from '../../components/BannerCarousel/BannerCarousel.js';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react'; // Import useContext
-import { AuthContext } from '../../context/AuthContext.js'; // Import AuthContext của bạn
+import { useContext } from 'react'; 
+import { AuthContext } from '../../context/AuthContext.js'; 
 
 const cx = classNames.bind(styles);
 
@@ -108,15 +108,12 @@ function Volunteer() {
     const handleSave = (id) => alert(`Lưu tình nguyện viên ID: ${id}`);
 
     const handleApply = (volunteerId) => {
-        if (!isLoggedIn || !user || !user.id) { // Kiểm tra user và user.id
+        if (!isLoggedIn || !user || !user.id) {
             alert('Bạn cần đăng nhập để ứng tuyển. Vui lòng đăng nhập trước.');
             return;
         }
+        const userId = user.id; 
 
-        // Lấy userId từ đối tượng user trong AuthContext
-        const userId = user.id; // Đảm bảo rằng đối tượng user của bạn có thuộc tính 'id'
-
-        // Chuyển hướng đến trang đăng ký với userId và volunteerId trong URL
         navigate(`/volunteer-register/${userId}/${volunteerId}`);
     };
 

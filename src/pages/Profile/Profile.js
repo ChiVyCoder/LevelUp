@@ -83,7 +83,7 @@ function Profile() {
         fetchVolunteerApps();
     }, [displayUserId]);
 
-    // <<< THÊM useEffect MỚI ĐỂ LẤY DỮ LIỆU ĐĂNG KÝ THỰC TẬP
+    //useEffect ĐỂ LẤY DỮ LIỆU ĐĂNG KÝ THỰC TẬP
     useEffect(() => {
         const fetchInternshipApps = async () => {
             if (!displayUserId) {
@@ -107,7 +107,7 @@ function Profile() {
         fetchInternshipApps();
     }, [displayUserId]);
 
-    // <<< THÊM useEffect MỚI ĐỂ LẤY DỮ LIỆU HOÀN THÀNH KHÓA HỌC
+    // useEffect ĐỂ LẤY DỮ LIỆU HOÀN THÀNH KHÓA HỌC
     const courseNamesMap = {
         1: 'Khóa học Giao tiếp',
         2: 'Khóa học Kỹ năng thuyết trình',
@@ -195,7 +195,6 @@ function Profile() {
                     >
                         Hoạt động đã tham gia
                     </button>
-                    {/* <<< THÊM TAB MỚI CHO THỰC TẬP */}
                     <button
                         className={cx('tab-button', { active: activeTab === 'internships' })}
                         onClick={() => setActiveTab('internships')}

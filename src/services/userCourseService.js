@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://localhost:7208/api';
+const API_BASE_URL = 'https://levelup-api-qg0w.onrender.com/';
 
 export const finishCourse = async (userId, courseId) => {
     if (!userId || !courseId) {

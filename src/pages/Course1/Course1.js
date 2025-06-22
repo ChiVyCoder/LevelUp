@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'; // Import useState và useEffect
-import { Link, useParams } from 'react-router-dom'; // Import useParams
+import { useState, useEffect } from 'react'; 
+import { Link, useParams } from 'react-router-dom'; 
 import classNames from 'classnames/bind';
 import styles from './Course1.module.scss';
 
@@ -8,7 +8,6 @@ const cx = classNames.bind(styles);
 function Course1() {
   const { userId } = useParams();
   const courseId = '1'
-  // Trạng thái để kiểm soát việc hiển thị nội dung tab và trạng thái hoàn thành khóa học
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [isCourseCompleted, setIsCourseCompleted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -209,7 +208,6 @@ function Course1() {
               <img src="https://jobsgo.vn/blog/wp-content/uploads/2021/06/giao-tiep-hieu-qua.png" alt="Icon 1" style={{ borderRadius: '20px' }} />
               <img src="https://timviec365.vn/pictures/images/cac-tinh-huong-trong-quan-tri-hanh-chinh-van-phong-5.jpg" alt="Icon 2" style={{ borderRadius: '20px' }} />
             </div>
-            {/* Nút hoàn thành khóa học */}
             {error && <p className={cx('error-message')}>{error}</p>}
             {message && <p className={cx('success-message')}>{message}</p>}
             <button

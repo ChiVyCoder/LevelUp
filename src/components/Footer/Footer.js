@@ -82,7 +82,8 @@ function Footer () {
             </ul>
         </div>
         <p className={cx('copyright')}>
-            © 2025 - LevelUp - Bản quyền thuộc về <strong>Nhóm Một</strong>
+            © 2025 - LevelUp - Bản quyền thuộc về <strong>Nhóm Một</strong> <br/>
+            <strong>Sản phẩm này không phải là sản phẩm thương mại.</strong>
         </p>
         </footer>
     )

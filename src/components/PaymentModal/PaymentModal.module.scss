@@ -96,7 +96,7 @@
 }
 
 .bank-info {
-  flex-grow: 1; /* Cho phép chiếm không gian còn lại */
+  flex-grow: 1;
   p {
     margin: 5px 0;
     font-size: 1em;
@@ -108,7 +108,7 @@
 
 .highlight {
   font-weight: bold;
-  color: #dc3545; /* Màu đỏ nổi bật cho nội dung chuyển khoản */
+  color: #dc3545;
   font-size: 1.1em;
 }
 
@@ -188,5 +188,5 @@ hr {
   text-align: center;
   margin-top: 15px;
   font-weight: bold;
-  color: #d9534f; /* Màu đỏ cho lỗi, có thể thay đổi */
+  color: #d9534f;
 }

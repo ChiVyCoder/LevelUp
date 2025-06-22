@@ -1,8 +1,5 @@
+const API_BASE_URL = 'https://levelup-api-qg0w.onrender.com/'; 
 
-
-const API_BASE_URL = 'https://localhost:7208/api'; // Thay đổi nếu cổng API của bạn khác
-
-// Hàm để lấy tất cả các đăng ký tình nguyện của một người dùng cụ thể
 export const getVolunteerApplicationsByUserId = async (userId) => {
     if (!userId) {
         console.error("Lỗi: Không có UserId để lấy thông tin đăng ký tình nguyện.");
@@ -13,13 +10,12 @@ export const getVolunteerApplicationsByUserId = async (userId) => {
         const response = await fetch(`${API_BASE_URL}/users/${userId}/volunteer-applications`);
 
         if (!response.ok) {
-            // Nếu response không thành công (ví dụ: 404, 500), throw error
             const errorData = await response.json();
             throw new Error(errorData.message || 'Không thể lấy thông tin đăng ký tình nguyện.');
         }
 
         const data = await response.json();
-        return data; // Trả về mảng các VolunteerApplication của người dùng đó
+        return data; 
     } catch (error) {
         console.error("Lỗi khi gọi API lấy đăng ký tình nguyện:", error);
         throw error;

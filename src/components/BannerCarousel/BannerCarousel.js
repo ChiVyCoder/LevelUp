@@ -15,7 +15,6 @@ function BannerCarousel({ images = [] }) {
     const container = containerRef.current;
     const totalItems = images.length;
 
-    // Đảm bảo các ref tồn tại trước khi thao tác DOM
     if (!track || !container || totalItems === 0) {
         return; 
     }
